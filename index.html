@@ -12,23 +12,23 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="images/logo/Booki.png"> <!-- Peut-être à enlever, ou refaire une icon !-->
+    <!-- Faut-il ajouter un favicon, même si ce n’est pas demandé ? Pour le référencement et balisage-->
 </head>
 
 <body>
     <div class="main-container">
 
-        <header>
-            <img src="images/logo/Booki.png" alt="Logo Booki">
-            <nav>
-                <a href="#">Hébergements</a>
-                <a href="#">Activités</a>
+        <header class="appBar">
+            <img src="images/logo/Booki.png" alt="Logo Booki" class="appBar-icon">
+            <nav class="appBar-nav">
+                <a href="#hebergements">Hébergements</a>
+                <a href="#activites">Activités</a>
             </nav>
         </header>
 
         <main>
 
-<!-- Bandeau 1, présentations et filtres-->
+<!-- Bandeau 1, Info -->
 <!-- Fin Bandeau 2-->
 
 <!-- Hébergements à Marseille -->
@@ -36,7 +36,7 @@
             <div class="hebergements-and-populaires">
                 <section class="hebergements">
                     <div class="populaires-title">
-                        <h2 class="section-title">Les plus populaires</h2>
+                        <h2 class="section-title" id="hebergements">Hébergements à Marseille</h2>
                     </div>
                     <div class="populaires-cards">
                         <a href="#">
@@ -168,6 +168,9 @@
                 </section>
             </div>
 
+<!-- Bandeau 3 Section Activités-->
+
+<!-- Fin Bandeau 3 -->
         </main>
 
         <footer></footer>

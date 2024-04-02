@@ -1,5 +1,6 @@
 /****** General ***********/
-* {
+
+* {                                                     /* A quoi correspond l'étoile bleue ? >Est-il plus conseillé de coller un code sur .hmtl ou ici pour les fonts ?*/
     font-family: 'Raleway', sans-serif;
 }
 
@@ -13,6 +14,23 @@
     color: var(--main-color);
 }
 
+/* Header */
+.appBar {
+    display: flex;
+    flex-direction: row;
+}
+
+.appBar-icon {
+    width: 3.8rem; /*61.09px*/
+    height: 1.3rem; /*19px*/
+}
+
+.appBar-nav {
+    display: flex;
+    align-items: end;
+}
+/* Fin header*/
+
 body {
     display: flex;
     justify-content: center;
@@ -20,7 +38,8 @@ body {
 
 .main-container {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1440px;          /*Largeur maximum déjà écrite */
+    min-width: 1025px;          /*Largeur minimum ajoutée. Elle est déjà écrite en responsive en bas, puis-je l'enlever ici ?*/
     padding: 0 50px;
     box-sizing: border-box;
 }
@@ -128,7 +147,7 @@ a {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {                                                /*J'ai modifié 1024 pour écrire 1025*/
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -165,3 +184,5 @@ a {
 @media (max-width: 767.98px) {
     /* ... */
 }
+
+
