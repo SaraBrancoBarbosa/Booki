@@ -1,6 +1,6 @@
 /****** General ***********/
 
-* {                                                     /* A quoi correspond l'étoile bleue ? >Est-il plus conseillé de coller un code sur .hmtl ou ici pour les fonts ?*/
+* {                                             /* L'étoile bleue est-elle un sélecteur universel ? Est-il plus conseillé de coller un code sur .hmtl ou ici pour les fonts ?*/
     font-family: 'Raleway', sans-serif;
 }
 
@@ -14,7 +14,7 @@
     color: var(--main-color);
 }
 
-/* Header */
+/* Header */                        /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page ? */
 .appBar {
     display: flex;
     flex-direction: row;
@@ -28,7 +28,15 @@
 .appBar-nav {
     display: flex;
     align-items: end;
+
+    a:hover {                       /* Le hover fonctionne bien uniquement dans le header, mais est-ce correct d'imbriquer les codes ainsi ? (je pense que je vais faire une classe spécifique pour les boutons du header après) */
+        color: var(--main-color);
+        border-top: 2px #0065FC solid;
+    }
 }
+
+
+
 /* Fin header*/
 
 body {
@@ -44,7 +52,7 @@ body {
     box-sizing: border-box;
 }
 
-a {
+a {                             /* La maquette n'indique pas de changement de couleur au survol, le faire bleu quand même pour l'expérience utilisateur ? */
     color: inherit;
     text-decoration: none;
 }
@@ -185,4 +193,4 @@ a {
     /* ... */
 }
 
-
+            /* Penser à mettre la bordure bleue du header a:hover en bas */
