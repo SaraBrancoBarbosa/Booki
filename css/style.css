@@ -1,5 +1,5 @@
 /****** General ***********/
-
+                                                /* Faut-il mettre un code qui réinitialise la mise en forme de firefox et chrome ? */
 * {                                             /* L'étoile bleue est-elle un sélecteur universel ? Est-il plus conseillé de coller un code sur .hmtl ou ici pour les fonts ?*/
     font-family: 'Raleway', sans-serif;
 }
@@ -14,29 +14,25 @@
     color: var(--main-color);
 }
 
-/* Header */                        /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page ? */
-.appBar {
+
+/* Header EN TRAVAUX */                       /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page ? Ce n'est pas précisé dans la note */
+nav {
     display: flex;
     flex-direction: row;
-}
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.appBar-icon {
+  nav a:hover {
+    color: var(--main-color);
+    border-top: 2px #0065FC solid;          /* faut le coller en haut de la page */
+  }
+
+ .nav-icon {                                   /* À modifier, je place juste la classe pour le moment (je ne pense pas que le padding ici soit la solution */
     width: 3.8rem; /*61.09px*/
     height: 1.3rem; /*19px*/
-}
-
-.appBar-nav {
-    display: flex;
-    align-items: end;
-
-    a:hover {                       /* Le hover fonctionne bien uniquement dans le header, mais est-ce correct d'imbriquer les codes ainsi ? (je pense que je vais faire une classe spécifique pour les boutons du header après) */
-        color: var(--main-color);
-        border-top: 2px #0065FC solid;
-    }
-}
-
-
-
+    padding: 30px 0px;
+  }
 /* Fin header*/
 
 body {
