@@ -15,23 +15,29 @@
 }
 
 
-/* Header EN TRAVAUX */                       /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
+/* Header */                       /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
 .appBar {
     display: flex;
     justify-content: space-between;
   }
 
-  nav a:hover {
-    color: var(--main-color);
-    border-top: 2px #0065FC solid;          /* faut le coller en haut de la page */
-  }
-
- .nav-logo {                                   /* À modifier, je place juste la classe pour le moment (je ne pense pas que le padding ici soit la solution */
+.appBar-logo {                    /* À modifier, je place juste la classe pour le moment (je ne pense pas que le padding ici soit la solution */
     width: 3.8rem; /*61.09px*/
     height: 1.3rem; /*19px*/
-    padding: 30px 0px;
+    padding: 15px 0px;
     align-items: center;
-  }
+}  
+
+nav {
+    /* Séparer Hébergements et activités (boutons ?) */
+}
+
+nav a:hover {
+    color: var(--main-color);
+    border-top: 2px #0065FC solid;
+    padding-top: 6.5px;
+}
+
 /* Fin header*/
 
 body {
@@ -52,17 +58,80 @@ a {                             /* La maquette n'indique pas de changement de co
     text-decoration: none;
 }
 
+.section-title {
+    margin: 0;
+    font-size: 22px;
+}
+
 /****** Informations ***********/
+
+.informations {
+    padding-top: 30px;
+}
 
 .search-bar {
     border-radius: 20px;
+    padding-top: 15px;
+}
+
+.search-bar .fa-solid {
+    color: black;
+}
+
+.search-bar input {
+    font-weight: bold;
+    height: 35px;
+}
+
+.search-bar input[type='submit'] {
+    background-color: #0065FC;
+    color: white;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+button {
+    height: 40px;
+    border-radius: 20px;
+    border-color: #D9D9D9;
+    background-color: white;
+    padding: 0px 19px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #DEEBFF;
+}
+
+button:focus {                      /* Pour garder la couleur après sélection (c'est pas précisé sur la notice) */
+    background-color: #DEEBFF;
+}
+
+button .fa-solid {
+    padding-right: 10px;
 }
 
 /* Fin bandeau information */
 
-.section-title {
-    margin: 0;
-    font-size: 22px;
+
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .card {
@@ -88,28 +157,14 @@ a {                             /* La maquette n'indique pas de changement de co
     color: var(--main-bg-color)
 }
 
-/****** Hebergements And Populaires ***********/
-.hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hebergements-and-populaires section {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
 /****** Hebergements ***********/
+
 .hebergements {
     width: 65%;
 }
 
 .hebergements-title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .hebergements-cards {
@@ -118,32 +173,31 @@ a {                             /* La maquette n'indique pas de changement de co
     column-gap: 30px;
 }
 .hebergements-cards .card {
-    margin-top: 33px;
+    margin-top: 30px;
 }
 
 .hebergements-cards img {
-    width: 250px;
-    height: 124px;
+    width: 240px;                       
+    height: 110px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .hebergements-cards .card-content {
-    width: 67%;
+    width: 95%;                         /* Est-ce qu'on peut l'enlever ? */
     padding-left: 15px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     box-sizing: border-box;
 }
 
 .hebergements-cards .card-title {
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
 }
 
-.hebergements-cards .card-subtitle {
-    margin: 0;
+.hebergements-cards .card-subtitle {            /* Ajouter de l'espace pour aérer comme sur la maquette */
+    margin: 8px 0px;
 }
 
 .hebergements-cards .card-rating {
@@ -163,7 +217,7 @@ a {                             /* La maquette n'indique pas de changement de co
 
 .populaires-cards .card {
     display: flex;
-    margin-top: 33px;
+    margin-top: 30px;
 }
 
 .populaires-cards img {
