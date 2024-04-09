@@ -1,6 +1,6 @@
 /****** General ***********/
                                                 /* Faut-il mettre un code qui réinitialise la mise en forme de firefox et chrome ? */
-* {                                             /* L'étoile bleue est-elle un sélecteur universel ? Est-il plus conseillé de coller un code sur .hmtl ou ici pour les fonts ?*/
+* {                                             /* L'étoile bleue est-elle bien un sélecteur universel ? ?*/
     font-family: 'Raleway', sans-serif;
 }
 
@@ -13,32 +13,6 @@
 .fa-solid {
     color: var(--main-color);
 }
-
-
-/* Header */                       /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
-.appBar {
-    display: flex;
-    justify-content: space-between;
-  }
-
-.appBar-logo {                    /* À modifier, je place juste la classe pour le moment (je ne pense pas que le padding ici soit la solution */
-    width: 3.8rem; /*61.09px*/
-    height: 1.3rem; /*19px*/
-    padding: 15px 0px;
-    align-items: center;
-}  
-
-nav {
-    /* Séparer Hébergements et activités (boutons ?) */
-}
-
-nav a:hover {
-    color: var(--main-color);
-    border-top: 2px #0065FC solid;
-    padding-top: 6.5px;
-}
-
-/* Fin header*/
 
 body {
     display: flex;
@@ -63,6 +37,27 @@ a {                             /* La maquette n'indique pas de changement de co
     font-size: 22px;
 }
 
+/****** Header ***********/              /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
+.appBar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.appBar-logo {                    /* À modifier ? */
+    height: 1.3rem; /*19px*/
+    padding: 15px 0px;
+}  
+
+nav {
+    /* Séparer Hébergements et activités (boutons ?) */
+}
+
+nav a:hover {
+    color: var(--main-color);
+    border-top: 2px #0065FC solid;
+    padding-top: 6.5px;
+}
+
 /****** Informations ***********/
 
 .informations {
@@ -78,25 +73,36 @@ a {                             /* La maquette n'indique pas de changement de co
     color: black;
 }
 
+.search-bar label {
+    padding: 13px;
+    background-color: #F2F2F2;
+    border-radius: 10px 0px 0px 10px;
+}
+
 .search-bar input {
     font-weight: bold;
     height: 35px;
 }
 
-.search-bar input[type='submit'] {
-    background-color: #0065FC;
+.search-bar input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? Pour montrer une action en passant la souris */
     color: white;
+    background-color: #0065FC;
+    border-color: #0065FC;
+    border-style: solid;
+    border-radius: 0px 10px 10px 0px;
 }
 
 .filter-bar {
     display: flex;
+    align-items: center;
     gap: 15px;
     font-weight: bold;
-    padding-top: 15px;
+    padding-top: 30px;
 }
 
 button {
     height: 40px;
+    border-style: solid;
     border-radius: 20px;
     border-color: #D9D9D9;
     background-color: white;
@@ -114,13 +120,26 @@ button:focus {                      /* Pour garder la couleur après sélection 
 
 button .fa-solid {
     padding-right: 10px;
+    display: inline-block;
 }
 
-/* Fin bandeau information */
+.info-bar {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
 
-
+.info-bar .fa-info {
+    border-radius: 60px;
+    padding: 0.45em 0.8em;                 /* Est-ce qu'il y a une meilleure façon de faire la bordure grise ? De plus, le i n'est pas très bien centré */
+    margin-right:  10px;
+    border-style: solid;
+    border-color: #D9D9D9;
+    border-width: 1px;
+}
 
 /****** Hebergements And Populaires ***********/
+
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
@@ -177,7 +196,7 @@ button .fa-solid {
 }
 
 .hebergements-cards img {
-    width: 240px;                       
+    width: 240px;                               /* Le Scénario propose de donner une largeur en % et de garder la hauteur en px */
     height: 110px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -202,6 +221,12 @@ button .fa-solid {
 
 .hebergements-cards .card-rating {
     margin-bottom: 5px;
+}
+
+.hebergements-link {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /****** Populaires ***********/
@@ -251,19 +276,11 @@ button .fa-solid {
 
 /****** Activités à Marseille ***********/                      /* S'occuper du fond blanc, ça ne doit dépasser qu'en bas */
 .activites-a-marseille {
-    /*display: flex; */
+    padding: 65px 30px 30px 30px;
 }
 
 .activites-title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.activites-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .activites-cards {

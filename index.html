@@ -20,7 +20,7 @@
 
         <header>
             <div class="appBar">
-                <img src="images/logo/Booki.png" class="appBar-logo" alt="Logo Booki">
+                <img src="images/logo/Booki.png" class="appBar-logo" alt="Logo Booki">          <!-- Faire un lien sur la page d'accueil ? -->
                 <nav>
                     <a href="#hebergements">Hébergements</a>
                     <a href="#activites">Activités</a>
@@ -32,14 +32,10 @@
 
 <!-- Bandeau 1, Info -->
 
-
-
-<!-- 30pxl (?) au dessus pour séparer avec le header -->
-
             <div>
                 <section class="informations">
                     <div>
-                        <h2 class="section-title">Trouvez votre hébergement pour des vacances de rêve</h1>      <!-- On n'a pas de h1 sur la page index, est-ce bon quand même ? -->
+                        <h2 class="section-title">Trouvez votre hébergement pour des vacances de rêve</h2>      <!-- On n'a pas de h1 sur la page index, est-ce bon quand même ? -->
                         <p>En plein centre-ville ou en pleine nature</p>
                     </div>
                     
@@ -59,12 +55,11 @@
                         <button><i class="fa-solid fa-fire"></i>Nos pépites</button>
                     </div>
                     
-                    <div>
+                    <div class="info-bar">
                         <i class="fa-solid fa-info"></i><p>Plus de 500 logements sont disponibles dans cette ville</p>
                     </div>
                 </section>
             </div>
-<!-- Fin Bandeau 1-->
 
 <!-- Hébergements à Marseille -->
 
@@ -74,9 +69,9 @@
                         <h2 class="section-title" id="hebergements">Hébergements à Marseille</h2>
                     </div>
                     <div class="hebergements-cards">
-                        <a href="#">
+                        <a href="#">                                <!-- Le <a> dépasse en haut des cartes, mais pas dans "les populaires" -->
                             <article class="card">
-                                <img src="./images/hebergements/fred-kleber.jpg" alt="Image de la chambre d'hôtel montrant un lit">
+                                <img src="./images/hebergements/fred-kleber.jpg" alt="Image de la chambre d'hôtel montrant un lit"> <!-- Faut-il mettre une description alt différente à chaque fois ? -->
                                 <div class="card-content">
                                     <div class="card-txt">
                                         <h3 class="card-title">Hôtel du port</h3>
@@ -189,7 +184,7 @@
                             </article>
                         </a>
                     </div>
-                    <div>
+                    <div class="hebergements-link">
                         <a href="#">Afficher plus</a>
                     </div>
                 </section>
