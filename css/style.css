@@ -1,6 +1,6 @@
-/****** General ***********/
-                                                /* Faut-il mettre un code qui réinitialise la mise en forme de firefox et chrome ? */
-* {                                             /* L'étoile bleue est-elle bien un sélecteur universel ? ?*/
+/****** General ***********/                    /* Faut-il mettre un code qui réinitialise la mise en forme de firefox et chrome ? */
+                                                
+* {                                             /* L'étoile bleue est-elle bien un sélecteur universel ? Pourquoi un code pour le font est présent ici et en HTML ?*/
     font-family: 'Raleway', sans-serif;
 }
 
@@ -21,13 +21,14 @@ body {
 
 .main-container {
     width: 100%;
-    max-width: 1440px;          /*Largeur maximum déjà écrite */
-    min-width: 1025px;          /*Largeur minimum ajoutée. Elle est déjà écrite en responsive en bas, puis-je l'enlever ici ?*/
+    max-width: 1440px;
+    min-width: 1025px;
     padding: 0 50px;
+    margin-bottom: -8px;           /* Est-ce qu'il y a d'autres façons d'enlever l'espace blanc sous le footer ? */
     box-sizing: border-box;
 }
 
-a {                             /* La maquette n'indique pas de changement de couleur au survol, le faire bleu quand même pour l'expérience utilisateur ? */
+a {                                /* La maquette n'indique pas de changement de couleur au survol, le faire bleu quand même pour l'expérience utilisateur ? */
     color: inherit;
     text-decoration: none;
 }
@@ -38,12 +39,12 @@ a {                             /* La maquette n'indique pas de changement de co
 }
 
 /****** Header ***********/              /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
-.appBar {
+header {
     display: flex;
     justify-content: space-between;
   }
 
-.appBar-logo {                    /* À modifier ? */
+header .logo {                    /* À modifier ? */
     height: 1.3rem; /*19px*/
     padding: 15px 0px;
 }  
@@ -61,30 +62,35 @@ nav a:hover {
 /****** Informations ***********/
 
 .informations {
-    padding-top: 30px;
+    padding-top: 35px;
 }
 
-.search-bar {
+.informations-text {
+    margin-top: 8px;
+}
+
+form {
+    display: flex;
     border-radius: 20px;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
-.search-bar .fa-solid {
+form .fa-solid {
     color: black;
 }
 
-.search-bar label {
+form label {
     padding: 13px;
     background-color: #F2F2F2;
     border-radius: 10px 0px 0px 10px;
 }
 
-.search-bar input {
+form input {
     font-weight: bold;
     height: 35px;
 }
 
-.search-bar input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? Pour montrer une action en passant la souris */
+form input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? Pour montrer une action en passant la souris */
     color: white;
     background-color: #0065FC;
     border-color: #0065FC;
@@ -126,7 +132,7 @@ button .fa-solid {
 .info-bar {
     display: flex;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .info-bar .fa-info {
@@ -138,12 +144,12 @@ button .fa-solid {
     border-width: 1px;
 }
 
-/****** Hebergements And Populaires ***********/
+/****** Hebergements, Populaires and Activites ***********/
 
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
-    padding-top: 35px;
+    padding-top: 25px;
 }
 
 .hebergements-and-populaires section {
@@ -166,6 +172,12 @@ button .fa-solid {
 
 .card-title {
     font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.card-rating {
+    margin-bottom: 5px;
 }
 
 .euro {
@@ -182,10 +194,6 @@ button .fa-solid {
     width: 65%;
 }
 
-.hebergements-title {
-    display: flex;
-}
-
 .hebergements-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -196,31 +204,22 @@ button .fa-solid {
 }
 
 .hebergements-cards img {
-    width: 240px;                               /* Le Scénario propose de donner une largeur en % et de garder la hauteur en px */
+    width: 100%;
     height: 110px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .hebergements-cards .card-content {
-    width: 95%;                         /* Est-ce qu'on peut l'enlever ? */
-    padding-left: 15px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    width: 95%;
+    padding-left: 15px;
 }
 
-.hebergements-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-.hebergements-cards .card-subtitle {            /* Ajouter de l'espace pour aérer comme sur la maquette */
+.hebergements-cards .card-subtitle {
     margin: 8px 0px;
-}
-
-.hebergements-cards .card-rating {
-    margin-bottom: 5px;
 }
 
 .hebergements-link {
@@ -253,68 +252,59 @@ button .fa-solid {
 }
 
 .populaires-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-}
-
-.populaires-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
+    width: 67%;
+    padding-left: 15px;
 }
 
 .populaires-cards .card-subtitle {
     margin: 0;
 }
 
-.populaires-cards .card-rating {
-    margin-bottom: 5px;
-}
-
 /****** Activités à Marseille ***********/                      /* S'occuper du fond blanc, ça ne doit dépasser qu'en bas */
-.activites-a-marseille {
+.activites {
     padding: 65px 30px 30px 30px;
-}
-
-.activites-title {
-    display: flex;
 }
 
 .activites-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
 }
 
 .activites-cards .card {
     margin-top: 33px;
+    padding: 0px 0px 5px 0px;
 }
 
 .activites-cards img {
-    width: 297px;
+    width: 100%;
     height: 380px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .activites-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    width: 95%;
+    padding: 5px 0px 5px 15px;
     box-sizing: border-box;
 }
 
 .activites-cards .card-title {
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
 }
 
 
 /****** Footer ***********/
+
+footer {
+    padding-top: 35px;
+}
+
 .footer-container {                             /* Le fond gris doit dépasser en bas */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -332,7 +322,7 @@ button .fa-solid {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1025px) {                                                /*J'ai modifié 1024 pour écrire 1025*/
+@media (max-width: 1024px) {
     .hebergements-and-populaires {
         flex-direction: column;
     }

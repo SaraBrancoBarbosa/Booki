@@ -12,20 +12,18 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Faut-il ajouter un favicon, même si ce n’est pas demandé ? Pour le référencement et balisage-->
+    <!-- Faut-il ajouter un favicon, même si ce n’est pas demandé ? Pour le référencement et balisage (erreur : GET http://127.0.0.1:5500/favicon.ico) -->
 </head>
 
 <body>
     <div class="main-container">
 
         <header>
-            <div class="appBar">
-                <img src="images/logo/Booki.png" class="appBar-logo" alt="Logo Booki">          <!-- Faire un lien sur la page d'accueil ? -->
-                <nav>
-                    <a href="#hebergements">Hébergements</a>
-                    <a href="#activites">Activités</a>
-                </nav>
-            </div>
+            <img src="images/logo/Booki.png" class="logo" alt="Logo Booki">          <!-- Faire un lien sur la page d'accueil ? -->
+            <nav>
+                <a href="#hebergements">Hébergements</a>
+                <a href="#activites">Activités</a>
+            </nav>
         </header>
 
         <main>
@@ -35,17 +33,15 @@
             <div>
                 <section class="informations">
                     <div>
-                        <h2 class="section-title">Trouvez votre hébergement pour des vacances de rêve</h2>      <!-- On n'a pas de h1 sur la page index, est-ce bon quand même ? -->
-                        <p>En plein centre-ville ou en pleine nature</p>
+                        <h2 class="section-title">Trouvez votre hébergement pour des vacances de rêve</h2>      <!-- J'aimerais le mettre en h1, serait-ce bon ? -->
+                        <p class="informations-text">En plein centre-ville ou en pleine nature</p>
                     </div>
                     
-                    <div class="search-bar">
                         <form action="" method="get">
                             <label for="ville"><i class="fa-solid fa-location-dot"></i></label>                                
                             <input type="text" name="ville" id="ville" placeholder="Marseille, France">
                             <input type="submit" value="Rechercher">
                         </form>
-                    </div>
                     
                     <div class="filter-bar">
                         <div>Filtres</div>
@@ -65,11 +61,9 @@
 
             <div class="hebergements-and-populaires">
                 <section class="hebergements">
-                    <div class="hebergements-title">
-                        <h2 class="section-title" id="hebergements">Hébergements à Marseille</h2>
-                    </div>
+                    <h2 class="section-title" id="hebergements">Hébergements à Marseille</h2>
                     <div class="hebergements-cards">
-                        <a href="#">                                <!-- Le <a> dépasse en haut des cartes, mais pas dans "les populaires" -->
+                        <a href="#">                                <!-- Le <a> dépasse en haut des cartes (à cause du grid ?) ("hebergements-cards: margin-top 30px)")-->
                             <article class="card">
                                 <img src="./images/hebergements/fred-kleber.jpg" alt="Image de la chambre d'hôtel montrant un lit"> <!-- Faut-il mettre une description alt différente à chaque fois ? -->
                                 <div class="card-content">
@@ -260,13 +254,11 @@
 
 <!-- Bandeau 3 Section Activités-->
 
-            <div class="activites-a-marseille">
+            <div class="activites">
                 <section>
-                    <div class="activites-title">
-                        <h2 class="section-title" id="activites">Activités à Marseille</h2>
-                    </div>
+                    <h2 class="section-title" id="activites">Activités à Marseille</h2>
                     <div class="activites-cards">
-                        <a href="#">
+                        <a href="#">                                                <!-- Le <a> dépasse aussi au-dessus des cartes -->
                             <article class="card">
                                 <img src="./images/activites/reno-laithienne.jpg" alt="Image d'un port montrant des bâteaux et des immeubles">
                                 <div class="card-content">
