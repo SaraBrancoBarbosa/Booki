@@ -1,7 +1,11 @@
-/****** General ***********/                    /* Faut-il mettre un code qui réinitialise la mise en forme de firefox et chrome ? */
-                                                
+/* Chercher « Normalisation css » pour réinitiatiser firefox et chrome. Et coller le code ici sur une seule ligne !
+
+/****** General ***********/
 * {                                             /* L'étoile bleue est-elle bien un sélecteur universel ? Pourquoi un code pour le font est présent ici et en HTML ?*/
     font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -20,15 +24,14 @@ body {
 }
 
 .main-container {
-    width: 100%;
+    /* width: 100%; */
     max-width: 1440px;
     min-width: 1025px;
     padding: 0 50px;
-    margin-bottom: -8px;           /* Est-ce qu'il y a d'autres façons d'enlever l'espace blanc sous le footer ? */
     box-sizing: border-box;
 }
 
-a {                                /* La maquette n'indique pas de changement de couleur au survol, le faire bleu quand même pour l'expérience utilisateur ? */
+a {
     color: inherit;
     text-decoration: none;
 }
@@ -38,25 +41,24 @@ a {                                /* La maquette n'indique pas de changement de
     font-size: 22px;
 }
 
-/****** Header ***********/              /* Est-ce qu'on veut que le header reste toujours visible même quand on défile la page (sticky) ? Ce n'est pas précisé dans la note */
+/****** Header ***********/
 header {
     display: flex;
     justify-content: space-between;
   }
 
-header .logo {                    /* À modifier ? */
-    height: 1.3rem; /*19px*/
+header .logo {
+    height: 20px;
     padding: 15px 0px;
 }  
 
 nav {
-    /* Séparer Hébergements et activités (boutons ?) */
+    /* Séparer Hébergements et activités (boutons ?) | Mettre un flex ? Et mettre une class sur la nav :D */
 }
 
 nav a:hover {
     color: var(--main-color);
     border-top: 2px #0065FC solid;
-    padding-top: 6.5px;
 }
 
 /****** Informations ***********/
@@ -71,7 +73,7 @@ nav a:hover {
 
 form {
     display: flex;
-    border-radius: 20px;
+    align-items: center;
     padding-top: 20px;
 }
 
@@ -80,22 +82,33 @@ form .fa-solid {
 }
 
 form label {
-    padding: 13px;
+    padding: 12px 15px 12px 15px;
     background-color: #F2F2F2;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 15px 0px 0px 15px;
 }
 
-form input {
+form input {                                        /* Raccourcir la zone de texte */
     font-weight: bold;
-    height: 35px;
+    height: 34px;
+    text-align: center;
+    border-color: #F2F2F2;
+    border-style: solid;
+    border-left: 0px;
+    border-right: 0px;
 }
 
-form input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? Pour montrer une action en passant la souris */
+form input:focus {
+    border-style: none;
+}
+
+form input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? metter un cursor pointer */
     color: white;
     background-color: #0065FC;
     border-color: #0065FC;
     border-style: solid;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 15px 15px 0px;
+    height: 39px;
+    padding: 0px 13px;
 }
 
 .filter-bar {
@@ -120,10 +133,6 @@ button:hover {
     background-color: #DEEBFF;
 }
 
-button:focus {                      /* Pour garder la couleur après sélection (c'est pas précisé sur la notice) */
-    background-color: #DEEBFF;
-}
-
 button .fa-solid {
     padding-right: 10px;
     display: inline-block;
@@ -137,7 +146,7 @@ button .fa-solid {
 
 .info-bar .fa-info {
     border-radius: 60px;
-    padding: 0.45em 0.8em;                 /* Est-ce qu'il y a une meilleure façon de faire la bordure grise ? De plus, le i n'est pas très bien centré */
+    padding: 0.5em 0.8em;                 /* Est-ce qu'il y a une meilleure façon de faire la bordure grise ? De plus, le i n'est pas très bien centré OUI */
     margin-right:  10px;
     border-style: solid;
     border-color: #D9D9D9;
@@ -149,7 +158,7 @@ button .fa-solid {
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
-    padding-top: 25px;
+    padding-top: 25px; /* ça partira avec un gaaap */
 }
 
 .hebergements-and-populaires section {
@@ -163,7 +172,7 @@ button .fa-solid {
     background-color: white;
     border-radius: 20px;
     padding: 5px;
-    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);    /* Le faire pour le reste */
 }
 
 .card img {
@@ -196,7 +205,7 @@ button .fa-solid {
 
 .hebergements-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     column-gap: 30px;
 }
 .hebergements-cards .card {
@@ -264,7 +273,7 @@ button .fa-solid {
     margin: 0;
 }
 
-/****** Activités à Marseille ***********/                      /* S'occuper du fond blanc, ça ne doit dépasser qu'en bas */
+/****** Activités à Marseille ***********/
 .activites {
     padding: 65px 30px 30px 30px;
 }
@@ -305,7 +314,7 @@ footer {
     padding-top: 35px;
 }
 
-.footer-container {                             /* Le fond gris doit dépasser en bas */
+.footer-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--main-bg-color);
