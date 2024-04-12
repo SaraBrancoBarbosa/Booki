@@ -1,11 +1,8 @@
-/* Chercher « Normalisation css » pour réinitiatiser firefox et chrome. Et coller le code ici sur une seule ligne !
-
 /****** General ***********/
-* {                                             /* L'étoile bleue est-elle bien un sélecteur universel ? Pourquoi un code pour le font est présent ici et en HTML ?*/
+* {
     font-family: 'Raleway', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 :root {
@@ -24,11 +21,18 @@ body {
 }
 
 .main-container {
-    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     max-width: 1440px;
     min-width: 1025px;
-    padding: 0 50px;
     box-sizing: border-box;
+}
+
+.main-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 a {
@@ -36,27 +40,38 @@ a {
     text-decoration: none;
 }
 
-.section-title {
-    margin: 0;
-    font-size: 22px;
+.section-title {                /* h1 et h2 */
+    font-size: 1.4rem;
+}
+
+h4 {                            /* Pour le footer */
+    font-size: 1rem;
 }
 
 /****** Header ***********/
-header {
+.appBar {
     display: flex;
     justify-content: space-between;
   }
 
-header .logo {
+.appBar .logo {
     height: 20px;
-    padding: 15px 0px;
+    /* padding: 15px 0px; */
 }  
 
-nav {
-    /* Séparer Hébergements et activités (boutons ?) | Mettre un flex ? Et mettre une class sur la nav :D */
+.appBar-nav {
+    display: flex;
+    gap: 30px;
 }
 
-nav a:hover {
+.appBar-nav-items {
+    display: inline-flex;
+    box-sizing: border-box;
+    height: 50%;
+    align-items: end;
+}
+
+.appBar-nav-items:hover {
     color: var(--main-color);
     border-top: 2px #0065FC solid;
 }
@@ -64,17 +79,18 @@ nav a:hover {
 /****** Informations ***********/
 
 .informations {
-    padding-top: 35px;
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.informations-text {
+/* .informations-text {
     margin-top: 8px;
-}
+} */
 
 form {
     display: flex;
     align-items: center;
-    padding-top: 20px;
 }
 
 form .fa-solid {
@@ -108,7 +124,11 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
     border-style: solid;
     border-radius: 0px 15px 15px 0px;
     height: 39px;
-    padding: 0px 13px;
+    /* padding: 0px 13px; */
+}
+
+.fieldset {
+    border: none;
 }
 
 .filter-bar {
@@ -116,41 +136,48 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
     align-items: center;
     gap: 15px;
     font-weight: bold;
-    padding-top: 30px;
 }
 
-button {
-    height: 40px;
+.filter-bar .input {
+    position: absolute;
+    opacity: 0;
+}
+
+.filter-bar .label {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
     border-style: solid;
     border-radius: 20px;
     border-color: #D9D9D9;
     background-color: white;
-    padding: 0px 19px;
-    font-weight: bold;
+    border-width: 2px;
 }
 
-button:hover {
+.filter-bar .input:checked + .label {
     background-color: #DEEBFF;
-}
-
-button .fa-solid {
-    padding-right: 10px;
-    display: inline-block;
 }
 
 .info-bar {
     display: flex;
     align-items: center;
-    padding-top: 20px;
+    gap: 10px;
 }
 
 .info-bar .fa-info {
-    border-radius: 60px;
-    padding: 0.5em 0.8em;                 /* Est-ce qu'il y a une meilleure façon de faire la bordure grise ? De plus, le i n'est pas très bien centré OUI */
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border-color: #F2F2F2;
+    /* border-radius: 60px;
+    padding: 0.5em 0.8em;
     margin-right:  10px;
     border-style: solid;
     border-color: #D9D9D9;
-    border-width: 1px;
+    border-width: 1px; */
 }
 
 /****** Hebergements, Populaires and Activites ***********/
@@ -158,14 +185,16 @@ button .fa-solid {
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
-    padding-top: 25px; /* ça partira avec un gaaap */
 }
 
 .hebergements-and-populaires section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 30px;
     background-color: var(--main-bg-color);
     border-radius: 20px;
-    padding: 30px;
-    box-sizing: border-box;
+    padding: 30px;                              /* Celui-là est à garder */
 }
 
 .card {
@@ -175,19 +204,23 @@ button .fa-solid {
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);    /* Le faire pour le reste */
 }
 
+.card-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .card img {
     object-fit: cover;
 }
 
-.card-title {
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+.card-title {           /* h3 */
+    font-size: 1rem;
 }
 
-.card-rating {
+/* .card-rating {
     margin-bottom: 5px;
-}
+} */
 
 .euro {
     font-weight: 700;
@@ -203,38 +236,30 @@ button .fa-solid {
     width: 65%;
 }
 
-.hebergements-cards {
+.hebergements-cards {                                                       /* Ici c'est tout bon */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    column-gap: 30px;
-}
-.hebergements-cards .card {
-    margin-top: 30px;
+    gap: 30px;
 }
 
-.hebergements-cards img {
+.hebergements-cards img {                                                   /* Ici c'est tout bon */
     width: 100%;
     height: 110px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .hebergements-cards .card-content {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 95%;
-    padding-left: 15px;
+    padding: 8px;                   /* Je peux garder ce padding je pense */
+    gap: 8px                               /* Pour les étoiles */
 }
 
-.hebergements-cards .card-subtitle {
-    margin: 8px 0px;
-}
-
-.hebergements-link {
-    margin-top: 30px;
+.hebergements-link {                /* Voir comment centrer cette ligne */
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.1rem;
 }
 
 /****** Populaires ***********/
@@ -250,14 +275,19 @@ button .fa-solid {
 
 .populaires-cards .card {
     display: flex;
-    margin-top: 30px;
+}
+
+.populaires-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .populaires-cards img {
     width: 33%;
     height: 136px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .populaires-cards .card-content {
@@ -266,26 +296,26 @@ button .fa-solid {
     justify-content: space-between;
     box-sizing: border-box;
     width: 67%;
-    padding-left: 15px;
-}
-
-.populaires-cards .card-subtitle {
-    margin: 0;
+    padding: 8px;
 }
 
 /****** Activités à Marseille ***********/
+
 .activites {
-    padding: 65px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
 }
 
 .activites-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;     /* Voir comment modifier cette ligne ? */
     column-gap: 30px;
 }
 
 .activites-cards .card {
-    margin-top: 33px;
+    /* margin-top: 33px; */
     padding: 0px 0px 5px 0px;
 }
 
@@ -297,35 +327,24 @@ button .fa-solid {
 }
 
 .activites-cards .card-content {
-    width: 95%;
-    padding: 5px 0px 5px 15px;
     box-sizing: border-box;
+    padding: 15px;
 }
-
-.activites-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 
 /****** Footer ***********/
 
-footer {
-    padding-top: 35px;
-}
-
 .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     background-color: var(--main-bg-color);
     padding: 20px;
 }
 
-  .footer-container h4 {
-    margin-top: 0px;
-    margin-bottom: 13px;
-    font-size: 16px;
-  }
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
@@ -356,17 +375,8 @@ footer {
     }
 
     .populaires-cards .card-title {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     .populaires-cards .card-subtitle {
-        font-size: 13px;
-    }
-}
-
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
-}
-
-            /* Penser à mettre la bordure bleue du header a:hover en bas */
+        font-size: 0.8rem;
