@@ -18,6 +18,8 @@
 body {
     display: flex;
     justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .main-container {
@@ -40,35 +42,49 @@ a {
     text-decoration: none;
 }
 
-.section-title {                /* h1 et h2 */
+h1, h2 {
     font-size: 1.4rem;
+    margin: 0;
 }
 
-h4 {                            /* Pour le footer */
+h3 {
     font-size: 1rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /****** Header ***********/
 .appBar {
     display: flex;
     justify-content: space-between;
-  }
+    align-items: center;
+    height: 80px;
+}
 
 .appBar .logo {
     height: 20px;
-    /* padding: 15px 0px; */
 }  
 
 .appBar-nav {
     display: flex;
     gap: 30px;
+    height: 80px;
 }
 
 .appBar-nav-items {
     display: inline-flex;
     box-sizing: border-box;
-    height: 50%;
+    height: 35%;
     align-items: end;
+    border-top: 2px #ffffff00 solid;
 }
 
 .appBar-nav-items:hover {
@@ -77,16 +93,11 @@ h4 {                            /* Pour le footer */
 }
 
 /****** Informations ***********/
-
 .informations {
     display:flex;
     flex-direction: column;
     gap: 30px;
 }
-
-/* .informations-text {
-    margin-top: 8px;
-} */
 
 form {
     display: flex;
@@ -98,43 +109,57 @@ form .fa-solid {
 }
 
 form label {
-    padding: 12px 15px 12px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
     background-color: #F2F2F2;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 12px 0px 0px 12px;
 }
 
-form input {                                        /* Raccourcir la zone de texte */
+form input {
     font-weight: bold;
     height: 34px;
+    width: 140px;                                   /* Je garde ou pas ? */
     text-align: center;
+    border-width: 1px 0px 1px 0px;
     border-color: #F2F2F2;
     border-style: solid;
-    border-left: 0px;
-    border-right: 0px;
 }
 
 form input:focus {
-    border-style: none;
+    outline: none;
 }
 
-form input[type='submit'] {                          /* Est-ce qu'on met un style au hover ? metter un cursor pointer */
+form input[type='submit'] {
     color: white;
     background-color: #0065FC;
     border-color: #0065FC;
     border-style: solid;
-    border-radius: 0px 15px 15px 0px;
-    height: 39px;
-    /* padding: 0px 13px; */
+    border-radius: 0px 12px 12px 0px;
+    height: 36px;
+    width: 100px;
+    cursor: pointer;
 }
 
 .fieldset {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     border: none;
+    padding: 0;
+}
+
+.legend {
+    float: left;
+    font-weight: bold;
 }
 
 .filter-bar {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     font-weight: bold;
 }
 
@@ -165,23 +190,20 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
     gap: 10px;
 }
 
-.info-bar .fa-info {
+.info-bar .fa-info {                        /* faire le i plus petit (et l'aligner mieux ?) */
     display: flex;
     justify-content: center;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border-color: #F2F2F2;
-    /* border-radius: 60px;
-    padding: 0.5em 0.8em;
-    margin-right:  10px;
-    border-style: solid;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    background-color: white;
     border-color: #D9D9D9;
-    border-width: 1px; */
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
 }
 
 /****** Hebergements, Populaires and Activites ***********/
-
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
@@ -204,23 +226,9 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);    /* Le faire pour le reste */
 }
 
-.card-txt {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .card img {
     object-fit: cover;
 }
-
-.card-title {           /* h3 */
-    font-size: 1rem;
-}
-
-/* .card-rating {
-    margin-bottom: 5px;
-} */
 
 .euro {
     font-weight: 700;
@@ -231,20 +239,19 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
 }
 
 /****** Hebergements ***********/
-
 .hebergements {
     width: 65%;
 }
 
-.hebergements-cards {                                                       /* Ici c'est tout bon */
+.hebergements-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 30px;
 }
 
-.hebergements-cards img {                                                   /* Ici c'est tout bon */
+.hebergements-cards img {
     width: 100%;
-    height: 110px;
+    height: 124px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
@@ -253,11 +260,11 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 8px;                   /* Je peux garder ce padding je pense */
-    gap: 8px                               /* Pour les étoiles */
+    padding: 8px;
+    gap: 8px
 }
 
-.hebergements-link {                /* Voir comment centrer cette ligne */
+.hebergements-link {
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -300,7 +307,6 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
 }
 
 /****** Activités à Marseille ***********/
-
 .activites {
     display: flex;
     flex-direction: column;
@@ -327,6 +333,9 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
 }
 
 .activites-cards .card-content {
+    display: flex;
+    justify-content: center;
+    height: 60px;
     box-sizing: border-box;
     padding: 15px;
 }
@@ -335,9 +344,10 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     background-color: var(--main-bg-color);
     padding: 20px;
+    gap: 30px;
 }
 
 .footer-div {
@@ -351,6 +361,12 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+
+    .main-container {
+        max-width: 1024px;
+        min-width: 769px;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -374,9 +390,26 @@ form input[type='submit'] {                          /* Est-ce qu'on met un styl
         width: 30%;
     }
 
-    .populaires-cards .card-title {
-        font-size: 0.9rem;
+    .activites-cards img {
+        height: 200px;
     }
 
-    .populaires-cards .card-subtitle {
-        font-size: 0.8rem;
+}
+
+/* Small devices (Mobile phones, less/equal than 768px) */
+@media (max-width: 768px) {
+
+    .main-container {
+        max-width: 768px;
+        min-width: 320px;
+        gap: 0px;
+    }
+
+    .appBar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+    }
+
+}
