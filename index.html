@@ -40,7 +40,10 @@
                         <i class="fa-solid fa-location-dot"></i>
                     </label>                                
                     <input type="text" name="ville" id="ville" placeholder="Marseille, France">
-                    <input type="submit" value="Rechercher">                                        <!-- Plus tard des changements avec le mobile (pour l'icon) avec une div autour -->
+                    <div class="search-button">
+                        <input type="submit" value="Rechercher">
+                        <i class="search-icon fa-solid fa-magnifying-glass"></i> <!-- Mon problème est que l'icon en mobile ne fait pas partie de l'input (et donc du submit), comment changer ça -->  
+                    </div>                                        
                 </form>
                 
                 <fieldset class="fieldset">

@@ -96,7 +96,7 @@ h4 {
 .informations {
     display:flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
 }
 
 form {
@@ -132,6 +132,12 @@ form input:focus {
     outline: none;
 }
 
+.search-button {
+    display: flex;
+    align-items: inherit;
+    position: relative;
+}
+
 form input[type='submit'] {
     color: white;
     background-color: #0065FC;
@@ -141,12 +147,17 @@ form input[type='submit'] {
     height: 36px;
     width: 100px;
     cursor: pointer;
+    position: absolute;
+}
+
+form .search-icon {
+    display: none;
 }
 
 .fieldset {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     border: none;
     padding: 0;
 }
@@ -171,10 +182,10 @@ form input[type='submit'] {
 .filter-bar .label {
     display: flex;
     gap: 10px;
-    padding: 10px;
+    padding: 12px;
     align-items: center;
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 25px;
     border-color: #D9D9D9;
     background-color: white;
     border-width: 2px;
@@ -320,7 +331,7 @@ form input[type='submit'] {
     column-gap: 30px;
 }
 
-.activites-cards .card {
+.activites-cards .card {                /* Je peux l'enlever tout court je pense ? */
     /* margin-top: 33px; */
     padding: 0px 0px 5px 0px;
 }
@@ -369,6 +380,7 @@ form input[type='submit'] {
 
     .hebergements-and-populaires {
         flex-direction: column;
+        gap: 50px;
     }
 
     .hebergements {
@@ -377,20 +389,21 @@ form input[type='submit'] {
 
     .populaires {
         width: 100%;
-        margin-top: 50px;
     }
 
     .populaires-cards  {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 20px;
     }
 
     .populaires-cards a {
-        width: 30%;
+        width: 100%;
     }
 
     .activites-cards img {
+        width: 92px;            /* à vérifier */
         height: 200px;
     }
 
@@ -399,10 +412,18 @@ form input[type='submit'] {
 /* Small devices (Mobile phones, less/equal than 768px) */
 @media (max-width: 768px) {
 
+    body {
+        padding: 0px;
+    }
+
     .main-container {
         max-width: 768px;
         min-width: 320px;
         gap: 0px;
+    }
+
+    .main-sections {
+        gap: 35px;
     }
 
     .appBar {
@@ -410,6 +431,113 @@ form input[type='submit'] {
         flex-direction: column;
         align-items: center;
         height: 80px;
+    }
+
+    .informations {
+        margin: 0px 20px 0px 20px;
+    }
+
+    form input[type='submit'] {
+        display: none;
+    }
+
+    form .search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #0065FC;
+        border-color: #0065FC;
+        border-style: solid;
+        border-radius: 12px;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        position: absolute;
+        box-shadow: 0px 4px 4px rgba(0, 4, 4, 0.25);
+    }
+
+    .fieldset {
+        display: grid;
+        grid-template-columns: 1fr;         /* à voir pour changer le 1fr ? */
+    }
+
+    .filter-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+        gap: 20px;
+    }
+
+    .info-bar .fa-info {
+        width: 31px;                        /* C'est pas la solution idéale pour l'icon, trouver autre chose */
+    }
+
+
+    /* Hébergements et populaires */
+    .hebergements-and-populaires {
+        gap: 15px;
+    }
+
+    .hebergements-and-populaires section {
+        border-radius: 0px;
+        gap: 15px;
+        padding: 20px;
+        background-color: white;
+    }
+    
+    .populaires {
+        order: 1;
+        background-color: var(--main-bg-color) !important;      /* Y a-t-il moyen d'éviter d'utiliser le !important ? */
+    }
+
+    .populaires-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .populaires-cards img {
+        width: 100px;
+        height: 146px;
+    }
+
+    .populaires-cards .card-content {
+        padding: 10px 5px 5px 15px;
+    }
+
+    .hebergements {
+        order: 2;
+    }
+
+    .hebergements-cards {
+        gap: 15px;
+    }
+
+    .hebergements-cards img {
+        height: 100px;
+    }
+
+    /* Activités à Marseille */
+
+    .activites-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .activites-cards img {
+        height: 140px;
+        width: 100%;
+    }
+
+    .activites-cards .card-content {
+        height: auto;
+    }
+
+    /* Footer */
+
+    .footer-container {
+        padding: 30px;
+        gap: 50px;
     }
 
 }
