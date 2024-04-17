@@ -18,7 +18,9 @@
     <div class="main-container">
 
         <header class="appBar">
-            <img src="./images/logo/Booki.png" class="logo" alt="Logo Booki">
+            <div class="logo">
+                <img src="./images/logo/Booki.png" alt="Logo Booki">
+            </div>
             <nav class="appBar-nav">
                 <a href="#hebergements" class="appBar-nav-items">Hébergements</a>
                 <a href="#activites" class="appBar-nav-items">Activités</a>
@@ -42,7 +44,7 @@
                     <input type="text" name="ville" id="ville" placeholder="Marseille, France">
                     <div class="search-button">
                         <input type="submit" value="Rechercher">
-                        <i class="search-icon fa-solid fa-magnifying-glass"></i> <!-- Mon problème est que l'icon en mobile ne fait pas partie de l'input (et donc du submit), comment changer ça -->  
+                        <i class="search-icon fa-solid fa-magnifying-glass"></i>
                     </div>                                        
                 </form>
                 
@@ -61,7 +63,7 @@
                         <input class="input" type="checkbox" id="pepites" names="pepites">
                             <label for="pepites" class="label">
                                 <i class="fa-solid fa-fire"></i>Nos pépites</label>
-                </div>
+                    </div>
                 </fieldset>
               
                 <div class="info-bar">
@@ -265,7 +267,7 @@
                 </section>
             </div>
 
-            <!-- Bandeau 3 Section Activités-->
+            <!-- Activités à Marseille -->
 
             <section class="activites" id="activites">
                 <h2>Activités à Marseille</h2>
@@ -307,7 +309,6 @@
                 
         </main>
 
-        <!-- Footer -->
         <footer class="footer-container">
                 <div class="footer-div">
                     <h4><a href="#">À propos</a></h4>
