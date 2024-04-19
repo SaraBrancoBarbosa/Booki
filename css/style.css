@@ -21,6 +21,7 @@ body {
     justify-content: center;
     padding-left: 50px;
     padding-right: 50px;
+    width: 100%;
 }
 
 .main-container {
@@ -74,14 +75,20 @@ p {
     height: 80px;
 }
 
-.appBar .logo {
+.appBar-logo {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.appBar-img {
     height: 20px;
-}  
+}
 
 .appBar-nav {
     display: flex;
-    gap: 30px;
+    gap: 68px;
     height: 80px;
 }
 
@@ -90,7 +97,7 @@ p {
     box-sizing: border-box;
     align-items: end;
     border-top: 2px #ffffff00 solid;
-    height: 35%;
+    height: 35px;
 }
 
 .appBar-nav-items:hover {
@@ -120,8 +127,8 @@ form label {
     justify-content: center;
     align-items: center;
     background-color: #F2F2F2;
-    height: 48px;
-    width: 48px;
+    height: 49px;
+    width: 49px;
     border-radius: 12px 0px 0px 12px;
 }
 
@@ -131,43 +138,33 @@ form input {
     border-color: #F2F2F2;
     border-style: solid;
     border-width: 1px 0px 1px 0px;
-    height: 46px;
+    height: 49px;
     margin-right: -1em;
-    padding-right: 0.5em;
+    padding-right: 1em;
 }
 
 form input:focus {
     outline: none;
 }
 
-.search-button {
-    display: flex;
-    align-items: inherit;
-    position: relative;
-}
-
-form input[type='submit'], .search-icon {
+.search-button, .search-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     cursor: pointer;
     color: white;
     background-color: #0065FC;
     border-color: #0065FC;
     border-style: solid;
     border-radius: 0px 12px 12px 0px;
-    height: 48px;
-    padding: 14px;
+    height: 49px;
+    padding: 16px;
+    font-weight: bold;
 }
 
 form .search-icon {
     display: none;
-    border-radius: 12px;
-    height: 14px;
-    width: 14px;
     color: white;
-    box-shadow: 0px 4px 4px rgba(0, 4, 4, 0.25);
 }
 
 .fieldset {
@@ -180,7 +177,7 @@ form .search-icon {
 }
 
 .legend {
-    float: left;
+    display: contents;
     font-size: 1.1rem;
 }
 
@@ -209,6 +206,10 @@ form .search-icon {
     border-width: 2px;
 }
 
+.filter-bar .label:hover {
+    background-color: #DEEBFF;
+}
+
 .filter-bar .fa-solid {
     font-size: 1.4rem;
 }
@@ -229,8 +230,7 @@ form .search-icon {
     justify-content: center;
     align-items: center;
     height: 24px;
-    width: 23px;
-    padding-left: 1px;
+    width: 24px;
     background-color: white;
     border-color: #D9D9D9;
     border-style: solid;
@@ -266,7 +266,7 @@ form .search-icon {
 }
 
 .card-subtitle {
-    font-size: 0.8rem;                      /* En dessous de 1rem, la taille ne change pas (pour mettre les 14px de la maquette) */
+    font-size: 0.8rem;
 }
 
 .euro {
@@ -349,7 +349,7 @@ form .search-icon {
     gap: 5px;
 }
 
-/****** Activités à Marseille ***********/
+/****** Activites ***********/
 .activites {
     display: flex;
     flex-direction: column;
@@ -359,7 +359,7 @@ form .search-icon {
 
 .activites-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;     /* Voir comment modifier cette ligne ? */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     column-gap: 30px;
 }
 
@@ -401,13 +401,14 @@ form .search-icon {
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
 
-    .main-container {
-        width: 100%;
+    .fieldset {
+        display: grid;
+        grid-template-columns: auto;
     }
 
     .fieldset .legend {
-        float: initial;
-        padding-bottom: 20px;               /* Y a-t-il un moyen de faire ça avec un gap ? */
+        display: grid;
+        padding-bottom: 20px;
     }
 
     .hebergements-and-populaires {
@@ -415,8 +416,8 @@ form .search-icon {
         gap: 50px;
     }
 
-    .hebergements-and-populaires section {
-        gap: 20px;
+    .populaires {
+        gap: 20px !important;
     }
 
     .hebergements, .populaires {
@@ -430,7 +431,7 @@ form .search-icon {
         gap: 20px;
     }
 
-    .populaires-cards a {                   /* Pourquoi est-ce que cela fonctionne sur le <a> mais pas les cards ? */
+    .populaires-cards a {
         width: 100%;
     }
 
@@ -444,12 +445,10 @@ form .search-icon {
 @media (max-width: 768px) {
 
     body {
-        display: initial;
         padding: 0px;
     }
 
     .main-container {
-        max-width: 768px;
         min-width: 320px;
     }
 
@@ -458,40 +457,45 @@ form .search-icon {
         grid-template-columns: 1fr;
         align-items: center;
         justify-content: center;
-        height: 80px;
-    }
-
-    .appBar .logo {
-        justify-content: center;
+        height: 115px;
     }
 
     .appBar-nav {
         align-items: end;
-        height: auto;
-        justify-content: space-evenly;
+        height: 35px;
+        gap: 0px;
     }
 
     .appBar-nav-items {
+        display: flex;
+        justify-content: center;
+        height: 80%;
+        width: 100%;
+        align-items: start;
         border-style: solid;
         border-width: 0px 0px 2px 0px;
         border-color: #f2f2f2;
     }
 
+    .appBar-nav-items:hover {
+        color: var(--main-color);
+        border-top: 0;
+        border-bottom: 2px #0065FC solid;
+    }
+
+    /* Informations */
     .informations {
         margin: 0px 20px;
     }
 
-    form input[type='submit'] {
+    .search-button {
         display: none;
     }
 
     form .search-icon {
         display: flex;
-    }
-
-    .fieldset {
-        display: grid;
-        grid-template-columns: auto;
+        border-radius: 12px;
+        box-shadow: 0px 4px 4px rgba(0, 4, 4, 0.25);
     }
 
     .filter-bar {
@@ -514,7 +518,7 @@ form .search-icon {
         background-color: white;
     }
     
-    .populaires {               /* Y a-t-il un moyen d'éviter d'utiliser les !important ? */
+    .populaires {
         order: 1;
         background-color: var(--main-bg-color) !important;
         padding: 30px 20px !important;
@@ -543,11 +547,7 @@ form .search-icon {
         gap: 15px;
     }
 
-    .hebergements-cards img {
-        height: 100px;
-    }
-
-    /* Activités à Marseille */
+    /* Activites */
     .activites-cards {
         display: flex;
         flex-direction: column;
