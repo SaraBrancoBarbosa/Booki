@@ -28,7 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    gap: 35px;
+    gap: 30px;
     max-width: 1440px;
     width: 100%;
 }
@@ -112,17 +112,17 @@ p {
     gap: 35px;
 }
 
-form {
+.informations .form {
     display: flex;
     align-items: center;
     font-size: 1.1rem;
 }
 
-form .fa-solid {
+.form .fa-solid {
     color: black;
 }
 
-form label {
+.form .form-label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,7 +131,7 @@ form label {
     border-radius: 12px 0px 0px 12px;
 }
 
-form input {
+.form .form-input {
     font-weight: bold;
     text-align: center;
     border-color: #F2F2F2;
@@ -142,7 +142,7 @@ form input {
     padding-right: 1em;
 }
 
-form input:focus {
+.form .form-input:focus {
     outline: none;
 }
 
@@ -161,7 +161,7 @@ form input:focus {
     font-weight: bold;
 }
 
-form .search-icon {
+.form .search-icon {
     display: none;
     color: white;
 }
@@ -187,12 +187,12 @@ form .search-icon {
     font-size: 1.06rem;
 }
 
-.filter-bar .input {
+.filter-bar .fieldset-input {
     position: absolute;
     opacity: 0;
 }
 
-.filter-bar .label {
+.filter-bar .fieldset-label {
     display: grid;
     grid-template-columns: 20px auto;
     align-items: center;
@@ -205,16 +205,16 @@ form .search-icon {
     border-width: 2px;
 }
 
-.filter-bar .label:hover {
-    background-color: #DEEBFF;
-}
-
 .filter-bar .fa-solid {
     font-size: 1.4rem;
     text-align: center;
 }
 
-.filter-bar .input:checked + .label {
+.filter-bar .fieldset-label:hover {
+    background-color: #DEEBFF;
+}
+
+.filter-bar .fieldset-input:checked + .fieldset-label {
     background-color: #DEEBFF;
 }
 
@@ -388,6 +388,7 @@ form .search-icon {
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     background-color: var(--main-bg-color);
     padding: 20px;
+    margin-top: 5px;
     gap: 30px;
 }
 
@@ -407,11 +408,6 @@ form .search-icon {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
-
-    .fieldset {
-        display: grid;
-        grid-template-columns: auto;
-    }
 
     .fieldset .legend {
         display: grid;
@@ -495,7 +491,7 @@ form .search-icon {
         margin: 0px 20px;
     }
 
-    form input {
+    .form .form-input {
         width: 100%;
         text-align: left;
         padding-left: 17.5px;
@@ -505,10 +501,15 @@ form .search-icon {
         display: none;
     }
 
-    form .search-icon {
+    .form .search-icon {
         display: flex;
         border-radius: 12px;
         box-shadow: 0px 4px 4px rgba(0, 4, 4, 0.25);
+    }
+
+    .fieldset {
+        display: grid;
+        grid-template-columns: auto;
     }
 
     .filter-bar {
