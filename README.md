@@ -1,4 +1,4 @@
-![Logo de l'application SportSee.](/images/logo/Booki.png)
+![Logo du site Booki.](/images/logo/Booki.png)
 
 # Booki (entreprise fictive)
 
